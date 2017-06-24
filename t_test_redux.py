@@ -21,7 +21,7 @@ def run_t_test():
 	event_matrix = pandas.read_csv("attributes.mutations.hc.tab", index_col =0, sep="\t")
 
 	# Determine overlapping samples across gene expression and event matrices
-	sharedSamples = set(gene_expression_matrix.columns).intersection(set(event_matrix.index))
+	sharedSamples = list(set(gene_expression_matrix.columns).intersection(set(event_matrix.index)))
 
 	# Subset the matrices according to overlapping samples
 	event_matrix = event_matrix.loc[sharedSamples]
