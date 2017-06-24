@@ -52,13 +52,13 @@ def run_t_test():
 
 		#Fill that Column
 		gene_by_event_t_stats[event] = ttests.statistic
-		print gene_by_event_tstats
+		print gene_by_event_t_stats
 		gene_by_event_p_value[event] = ttests.pvalue
 
 	
 	#Generate two matrices
-	positive_gene_by_event_matrix = np.logical_and(gene_by_event_tstats > 0, gene_by_event_pvalues < cutoff).astype(int)
-	negative_gene_by_event_matrix = np.logical_and(gene_by_event_tstats < 0, gene_by_event_pvalues < cutoff).astype(int)
+	positive_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats > 0, gene_by_event_pvalues < cutoff).astype(int)
+	negative_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats < 0, gene_by_event_pvalues < cutoff).astype(int)
 	print "lowestcomputedpValue = ", lowestcomputedpValue
 	print "highestcomputedpValue = ", highestcomputedpValue
 
