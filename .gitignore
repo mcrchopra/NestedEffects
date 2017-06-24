@@ -1,0 +1,6 @@
+*.tab
+cmake-3.9.0-rc2
+peer
+swig-3.0.12
+*.csv
+.RDataTmp
