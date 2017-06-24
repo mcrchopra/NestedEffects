@@ -41,8 +41,13 @@ def run_t_test():
 	for index, event_column in event_matrix.iteritems():
 		print "Event_index = {}".format(index)
 		# Seperate groups depending on binary value
-		group_0 = event_matrix.index[np.array(event_matrix[event_column] == 0)]
-		group_1 = event_matrix.index[np.array(event_matrix[event_column] == 1)]
+		print "Group 0 Indices {}".format(np.array(event_matrix[event_column] == 0).shape)
+		print "Event Matrix Dimensions{}".format(event_matrix.shape)		
+		print "Event Column Dimensions{}".format(event_matrix[event_column].shape)
+		print event_column
+
+		group_0 = event_matrix.index[np.array(event_column == 0)]
+		group_1 = event_matrix.index[np.array(event_column == 1)]
 
 		# Run the t
 		ttests = scipy.stats.ttest_ind(gene_expression_matrix[group_0], gene_expression_matrix[group_1], axis=1)
