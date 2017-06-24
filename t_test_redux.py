@@ -46,6 +46,7 @@ def run_t_test():
 
 		# Run the ttest
 		ttests = scipy.stats.ttest_ind(gene_expression_matrix[group_0], gene_expression_matrix[group_1], axis=1)
+		print ttests
 
 		print "Group 0: {}".format(group_0)
 		print "Group 1: {}".format(group_1)
