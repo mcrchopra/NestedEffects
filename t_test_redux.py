@@ -38,18 +38,13 @@ def run_t_test():
 	lowestcomputedpValue = 1
 	highestcomputedpValue = 0
 
-	for index, event_column in event_matrix.iteritems():
-		print "Event_index = {}".format(index)
+	for event, event_samples in event_matrix.iteritems():
+		print "Event = {}".format(event)
 		# Seperate groups depending on binary value
-		print "Group 0 Indices {}".format(np.array(event_matrix[event_column] == 0).shape)
-		print "Event Matrix Dimensions{}".format(event_matrix.shape)		
-		print "Event Column Dimensions{}".format(event_matrix[event_column].shape)
-		print event_column
+		group_0 = event_matrix.index[np.array(event_samples == 0)]
+		group_1 = event_matrix.index[np.array(event_samples == 1)]
 
-		group_0 = event_matrix.index[np.array(event_column == 0)]
-		group_1 = event_matrix.index[np.array(event_column == 1)]
-
-		# Run the t
+		# Run the ttest
 		ttests = scipy.stats.ttest_ind(gene_expression_matrix[group_0], gene_expression_matrix[group_1], axis=1)
 
 		print "Group 0: {}".format(group_0)
