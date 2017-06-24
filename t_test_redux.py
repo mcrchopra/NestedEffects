@@ -58,8 +58,8 @@ def run_t_test():
 
 	
 	#Generate two matrices
-	positive_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats > 0, gene_by_event_p_value < cutoff).astype(int)
-	negative_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats < 0, gene_by_event_p_value < cutoff).astype(int)
+	positive_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats > 0, gene_by_event_p_value < pValCutoff).astype(int)
+	negative_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats < 0, gene_by_event_p_value < pValCutoff).astype(int)
 	print "lowestcomputedpValue = ", lowestcomputedpValue
 	print "highestcomputedpValue = ", highestcomputedpValue
 

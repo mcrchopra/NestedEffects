@@ -35,7 +35,7 @@ def run_PEER(gene_expression_file, num_confounders,covariates_2, covariates_3):
 	model.setPriorEps(0.1,10.);
 
 	#Set Max Iterations
-	PEER_setNmax_iterations(model, 5000)
+	model.setNmax_iterations(5000)
 
 	#Read in and set the covariates in the model object that you want to use
 	#tissue_cov = pandas.read_csv(covariates_1, index_col = 0, sep = "\t")
