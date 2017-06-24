@@ -1,0 +1,9 @@
+                       Notes from Meeting:
+
+1. Do an all by all pairwise hypergeometric test to figure out which pairs of events have significant overlap
+	a. overlap
+2. Study the structure of phylogentic tree algorithms in order to create a subsetting metric
+3. Finish making notes on PEER (Look for ways to deal with confounders)
+4. Split binary matrix into two matrices (one for upregulated and one for downregulated)
+
+5. Make notes of the workflow

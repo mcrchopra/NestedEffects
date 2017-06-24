@@ -1,0 +1,4 @@
+                      eQTLS/PEER Notes:
+1. Expression quantitative trait loci (eQTLs) are regions of the genome containing DNA sequence variants that influence the expression level of one or more genes.
+	a. Specifically the mRNA
+2.

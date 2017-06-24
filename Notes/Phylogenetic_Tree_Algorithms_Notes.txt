@@ -1,0 +1,5 @@
+                  Phylogenetic Tree Algorithms
+1) UPGMA:
+2) ClustalW:
+3) PAUP:
+4) 
