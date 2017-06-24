@@ -53,7 +53,7 @@ def run_t_test():
 
 		#Fill that Column
 		gene_by_event_t_stats[event] = ttests.statistic
-		print gene_by_event_t_stats
+		#print gene_by_event_t_stats
 		gene_by_event_p_value[event] = ttests.pvalue
 
 	
