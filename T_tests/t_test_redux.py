@@ -18,7 +18,7 @@ import numpy as np
 def run_t_test():
 	# Read in gene_expression matrix and sample by event matrix
 	gene_expression_matrix = pandas.read_csv("mRNA_pancan12.nopipe.nodups.tab", index_col = 0, sep = "\t")
-	event_matrix = pandas.read_csv("attributes.mutations.hc.tab", index_col =0, sep="\t")
+	event_matrix = pandas.read_csv("full_event_dataframe_nonans.tab", index_col =0, sep="\t")
 
 	# Determine overlapping samples across gene expression and event matrices
 	sharedSamples = list(set(gene_expression_matrix.columns).intersection(set(event_matrix.index)))
@@ -60,7 +60,7 @@ def run_t_test():
 	#Generate two matrices
 	#positive_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats > 0, gene_by_event_p_value < pValCutoff).astype(int)
 	#negative_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats < 0, gene_by_event_p_value < pValCutoff).astype(int)
-	gene_by_event_t_stats.to_csv("t_test_statistic_matrix", sep = "\t")
+	gene_by_event_t_stats.to_csv("no_nans_t_test_statistic_matrix.tab", sep = "\t")
 	print "lowestcomputedpValue = ", lowestcomputedpValue
 	print "highestcomputedpValue = ", highestcomputedpValue
 
