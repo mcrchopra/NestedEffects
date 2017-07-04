@@ -59,7 +59,7 @@ def run_fischers():
   sample_by_event_matrix = pandas.read_csv("all_events.tab", index_col = 0, sep = "\t")
   sample_by_event_matrix = sample_by_event_matrix.dropna(axis=0, how='all')
   sample_by_event_matrix = sample_by_event_matrix.fillna(-1)
-  biXbi = sklp.pairwise_distances(sample_by_event_matrix,metric=binBinTest, n_jobs = -1)
+  biXbi = sklp.pairwise_distances(sample_by_event_matrix,metric=binBinTest, n_jobs = 8)
   results = pandas.DataFrame(biXbi)
   results.to_csv("sample_profile_similarity.tab", sep = "\t")
 
