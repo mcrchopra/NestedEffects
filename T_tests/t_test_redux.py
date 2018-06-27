@@ -4,6 +4,7 @@ import csv
 import scipy.stats
 import statsmodels.sandbox.stats.multicomp as correct
 import numpy as np
+import argparse
 
 # Create an gene by event matrix through the utliziation of t-tests on groups defined by
 # the sample by event matrix and gene by sample matrix
@@ -15,10 +16,10 @@ import numpy as np
 #		Perform a T-test between group 0 and group 1 (gene expression values) 
 #		The result of the t-test will be a value in the gene by event matrix 
 
-def run_t_test():
+def run_t_test(event_matrix, output_name):
 	# Read in gene_expression matrix and sample by event matrix
 	gene_expression_matrix = pandas.read_csv("mRNA_pancan12.nopipe.nodups.tab", index_col = 0, sep = "\t")
-	event_matrix = pandas.read_csv("full_event_dataframe_nonans.tab", index_col =0, sep="\t")
+	event_matrix = pandas.read_csv(event_matrix, index_col =0, sep="\t")
 
 	# Determine overlapping samples across gene expression and event matrices
 	sharedSamples = list(set(gene_expression_matrix.columns).intersection(set(event_matrix.index)))
@@ -37,30 +38,33 @@ def run_t_test():
 	pValCutoff = .01
 	lowestcomputedpValue = 1
 	highestcomputedpValue = 0
+	count = 0
 
 	for event, event_samples in event_matrix.iteritems():
-		print "Event = {}".format(event)
+		#print "Event = {}".format(event)
 		# Seperate groups depending on binary value
 		group_0 = event_matrix.index[np.array(event_samples == 0)]
 		group_1 = event_matrix.index[np.array(event_samples == 1)]
 
 		# Run the ttest
 		ttests = scipy.stats.ttest_ind(gene_expression_matrix[group_0], gene_expression_matrix[group_1], axis=1)
-		print ttests
+		#print ttests
 
-		print "Group 0: {}".format(group_0)
-		print "Group 1: {}".format(group_1)
+		#print "Group 0: {}".format(group_0)
+		#print "Group 1: {}".format(group_1)
 
 		#Fill that Column
 		gene_by_event_t_stats[event] = ttests.statistic
-		print gene_by_event_t_stats[event]
+		count += 1
+		print count
+		#print gene_by_event_t_stats[event]
 		gene_by_event_p_value[event] = ttests.pvalue
 
 	
 	#Generate two matrices
 	#positive_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats > 0, gene_by_event_p_value < pValCutoff).astype(int)
 	#negative_gene_by_event_matrix = np.logical_and(gene_by_event_t_stats < 0, gene_by_event_p_value < pValCutoff).astype(int)
-	gene_by_event_t_stats.to_csv("no_nans_t_test_statistic_matrix.tab", sep = "\t")
+	gene_by_event_t_stats.to_csv(output_name, sep = "\t")
 	print "lowestcomputedpValue = ", lowestcomputedpValue
 	print "highestcomputedpValue = ", highestcomputedpValue
 
@@ -68,7 +72,11 @@ def run_t_test():
 	#negative_gene_by_event_matrix.to_csv(path_or_buf = "negative_gene_by_event_matrix.tab",sep = '\t')
 
 def main():
-	run_t_test()
+	parser = argparse.ArgumentParser(description='Get File')
+	parser.add_argument('event_matrix', type = str)
+	parser.add_argument('output_name', type = str)
+	args = parser.parse_args()
+	run_t_test(args.event_matrix, args.output_name)
 
 if __name__ == '__main__':
 	main()

@@ -1,0 +1,17 @@
+"t_test_full_event_dataframe_no_nans.tab" -In Progress
+cosine_similarity_full_events_dataframe.tab - Complete
+sample_profile_similarity.tab - In Progress
+pearson_full_event_dataframe_no_nans.tab - To do (waiting for t_Test)
+attribute_file_full_event_dataframe.tab - In Progress
+	a) Need to fix file format
+pearson_by_cosine_full_event_dataframe.tab - To do
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Graphs:
+1) T-test Graph
+	a) Input:t_test_full_event_dataframe_no_nans.tab, attribute_file_full_event_dataframe.tab
+2) Cosine_similarity Graph
+	a) Input:cosine_similarity_full_events_dataframe.tab, attribute_file_full_event_dataframe.tab
+3) Pearson*Cosine Graph
+	a) pearson_by_cosine_full_event_dataframe.tab, attribute_file_full_event_dataframe.tab

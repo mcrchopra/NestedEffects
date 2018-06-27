@@ -1,0 +1,12 @@
+Tissue Similarity Attributes 
+Evaluate Map
+	Distance in Cancer Pathways (Distance in Map predictive of Distance in Cancer Pathways)
+	Superpathways
+	Dijkestra's All Paths Shortest Paths (Shortest Path in a Network) - (Multiple genes problem for direct comparison)
+		Scatterplot
+
+Negative Control
+	Randomly selected samples with same number of positives
+	Run through the pipeline
+
+Try to figure out how to get back missing mutations into map

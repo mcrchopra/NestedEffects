@@ -1,0 +1,4 @@
+Lambda - Larger it is the more penalized those extra features are
+Lambda Min - Looking for this
+Judged by Area under AUC Curve
+Y (Response Vector)
