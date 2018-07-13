@@ -1,4 +1,0 @@
-80996 - fischer's no nans
-24441 - cosine crash
-80571 - t_test
-40558 - fischer's with nans

@@ -1,6 +1,0 @@
-1) DbScan - Convert Similarity Matrix to Distances
-a) Theoretically give small communities of hyper-correlated event groups (Better Event Associations)
-2) Logistic Regression (Regularizers and Penalties)
-a) Filter Resultant Prediction Vectors by AUC (around 0.8)
-3) Then apply to PANCANAtlas
-4) Long Term: Use Connection of Event Associations to Create Markers that would be useful for patients
