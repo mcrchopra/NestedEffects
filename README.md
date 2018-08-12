@@ -1,6 +1,6 @@
 # meGA
 
-[I'm an inline-style link](https://github.com/mcrchopra/meGA-Mutually-Exclusive-Genomic-Associations-/blob/master/Research%20Paper%20-%20meGA_Cancer_Associations%20(Manu%20Chopra).pdf)
+[meGA Paper](https://github.com/mcrchopra/meGA-Mutually-Exclusive-Genomic-Associations-/blob/master/Research%20Paper%20-%20meGA_Cancer_Associations%20(Manu%20Chopra).pdf)
 
 ## Overview
 This project seeks to determine associations between mutually exclusive genomic alterations. In order to accomplish this, I developed the Mutually Exclusive Genomic Association (meGA) Computational Pipeline, a new methodology that couples a data- driven analysis of genomic alterations with an interactive visualization of these associations. 
