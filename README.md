@@ -1,7 +1,5 @@
 # meGA
 
-[meGA Paper](https://github.com/mcrchopra/meGA-Mutually-Exclusive-Genomic-Associations-/blob/master/Research%20Paper%20-%20meGA_Cancer_Associations%20(Manu%20Chopra).pdf)
-
 ## Overview
 This project seeks to determine associations between mutually exclusive genomic alterations. In order to accomplish this, I developed the Mutually Exclusive Genomic Association (meGA) Computational Pipeline, a new methodology that couples a data- driven analysis of genomic alterations with an interactive visualization of these associations. 
 
@@ -17,6 +15,10 @@ The Mutually Exclusive Genomic Association (meGA) Computational Pipeline general
 5) Refinement of this map to produce the meGA Visualization Map
 
 This pipeline currently has been applied to TCGA’s PANCAN12 Dataset and this refined map is “sparse pearson by cosine map missing nodes put on the map”.
+
+If you want to read more about meGA, click on the link below to the meGA Paper.
+
+[meGA Paper](https://github.com/mcrchopra/meGA-Mutually-Exclusive-Genomic-Associations-/blob/master/Research%20Paper%20-%20meGA_Cancer_Associations%20(Manu%20Chopra).pdf)
 
 ## Getting Started
 If you want to build your own map, follow the steps below.
